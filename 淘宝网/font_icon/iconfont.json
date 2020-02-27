@@ -1,0 +1,114 @@
+{
+  "id": "1558222",
+  "name": "font_icon",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "577329",
+      "name": "标星-fill",
+      "font_class": "biaoxingfill",
+      "unicode": "e732",
+      "unicode_decimal": 59186
+    },
+    {
+      "icon_id": "577340",
+      "name": "购物车-fill",
+      "font_class": "gouwuchefill",
+      "unicode": "e73c",
+      "unicode_decimal": 59196
+    },
+    {
+      "icon_id": "577399",
+      "name": "向下2",
+      "font_class": "xiangxia2",
+      "unicode": "e772",
+      "unicode_decimal": 59250
+    },
+    {
+      "icon_id": "592049",
+      "name": "菜单",
+      "font_class": "caidan",
+      "unicode": "e790",
+      "unicode_decimal": 59280
+    },
+    {
+      "icon_id": "1417129",
+      "name": "放大镜",
+      "font_class": "fangdajing",
+      "unicode": "e620",
+      "unicode_decimal": 58912
+    },
+    {
+      "icon_id": "2251058",
+      "name": "摄影",
+      "font_class": "sheying",
+      "unicode": "e629",
+      "unicode_decimal": 58921
+    },
+    {
+      "icon_id": "2273905",
+      "name": "下拉菜单",
+      "font_class": "xialacaidan1",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "2693657",
+      "name": "导航",
+      "font_class": "daohang",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "6019688",
+      "name": "淘宝购物车",
+      "font_class": "gouwuche",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "6515486",
+      "name": "下拉菜单",
+      "font_class": "xialacaidan",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "7080287",
+      "name": "淘宝",
+      "font_class": "taobao",
+      "unicode": "e62d",
+      "unicode_decimal": 58925
+    },
+    {
+      "icon_id": "7382989",
+      "name": "信封",
+      "font_class": "xinfeng",
+      "unicode": "e65a",
+      "unicode_decimal": 58970
+    },
+    {
+      "icon_id": "9533704",
+      "name": "相机",
+      "font_class": "xiangji",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "9733070",
+      "name": "信封",
+      "font_class": "xinfeng-",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "10099259",
+      "name": "实心星星",
+      "font_class": "start-copy",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    }
+  ]
+}

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="font_icon/iconfont.css" />
+		
+		<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+		<script src="js/data.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style type="text/css">
+		.small_box {
+			width: 400px;
+			height: 400px;
+			position: relative;
+			border: 1px solid red;
+			margin-left: 400px;
+		}
+		
+		.small_box img {
+			width: 400px;
+			height: 400px;
+		}
+		
+		.small_box .mask {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, 0.5);
+			opacity: 0;
+			z-index: 2;
+			cursor: move;
+		}
+		
+		.small_box .float_layer {
+			position: absolute;
+			width:200px;
+			height: 200px;
+			background: rgba(0, 0, 0, 0.5);
+			display: none;
+		}
+		
+		.big_box {
+			position: absolute;
+			left: 450px;
+			top: 10px;
+			width: 300px;
+			height: 300px;
+			overflow: hidden;
+			display: none;
+			margin-left: 400px;
+			margin-top: 150px;
+		}
+		
+		.big_box img {
+			position: absolute;
+		}
+	</style>
+
+	<body>
+		<div class="nav">
+			<div class="nav_top">
+				<div class="nav_top_site">
+					<ul class="site_left_ul clear_fixe">
+						<li class="site_left_li">
+							中国大陆
+							<span class="iconfont icon-xiangxia2"></span>
+						</li>
+						<li class="site_left_li">
+							<a href="">亲，请登录</a>
+						</li>
+						<li class="site_left_li">
+							<span class="iconfont icon-xinfeng-"></span>
+							<a href="">消息</a>
+							<span class="iconfont icon-xiangxia2"></span>
+						</li>
+						<li class="site_left_li"><a href="">手机逛淘宝</a></li>
+					</ul>
+					
+					
+					<ul class="site_right_ul clear_fixe">
+						<li class="site_right_li">
+							<a href="">我的淘宝</a>
+							<span class="iconfont icon-xiangxia2"></span>
+						</li>
+						<li class="site_right_li">
+							<span class="iconfont icon-gouwuchefill"></span>
+							<a href="">购物车</a>
+							<span class="iconfont icon-xiangxia2"></span>
+						</li>
+						<li class="site_right_li shouchanj">
+							<span class="iconfont icon-biaoxingfill"></span>
+							<a href="">收藏夹</a>
+							<span class="iconfont icon-xiangxia2"></span>
+						</li>
+						<li class="site_right_li">
+							<a href="">商品分类</a>
+						</li>
+						<li class="site_right_li">
+							<a href="">千牛卖家中心</a>
+							<span class="iconfont icon-xiangxia2"></span>
+						</li>
+						<li class="site_right_li">
+							<a href="">联系客服</a>
+							<span class="iconfont icon-xiangxia2"></span>
+						</li>
+						<li class="site_right_li">
+							<a href="">网站导航</a>
+							<span class="iconfont icon-xiangxia2"></span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<!--logo、搜索栏目-->
+		<div class="tb_search">
+			<div class="tb_search_top">
+				<div class="tb_search_warp clear_fixe">
+					<!--logo图标-->
+					<div class="tb_logo">
+						<div class="logo">
+							<h1>
+								<a href="">
+									<img src="//img.alicdn.com/tfs/TB1_uT8a5ERMeJjSspiXXbZLFXa-143-59.png"/>
+								</a>
+							</h1>
+						</div>
+					</div>
+					
+					<!--搜索栏目-->
+					<div class="tb_sousuo">
+						<div class="tb_sousuo_tar">
+							<div class="tabItem" id="tab1">
+								<!--<ul>
+									<li class="selected">宝贝</li>
+									<li>天猫</li>
+									<li>店铺</li>
+								</ul>-->
+								<!--搜索栏目中间搜索框-->
+								<div class="tabItem_center clear_fixe">
+									<div class="tabItem_center_l">
+										<div class="tabItem_center_l_input">
+											<input type="text" name="search" id="search" placeholder="肾宝片" value="" />
+										</div>
+										
+										<!--搜索栏目中间搜索框    左右两边的图标 相机或者放大镜-->
+										<span class="iconfont icon-xiangji"></span>
+										<i class="iconfont icon-fangdajing danDajin"></i>
+									</div>
+									<div class="tabItem_center_r">
+										<button class="tabItem_center_r_btn">搜索</button>
+									</div>
+								</div>
+								
+								<!--<div class="tab-content current">宝贝+</div>
+								<div class="tab-content">天猫+</div>
+								<div class="tab-content">店铺+</div>-->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		
+		<div class="small_box">
+			<span class="mask"></span>
+			<span class="float_layer"></span>
+			<img src="">
+			<p class="info">
+				<h4></h4>
+				<span class="price"></span>
+				<span class="sales"></span>
+			</p>
+		</div>
+		<div class="big_box">
+			<img src="">
+		</div>
+	</body>
+	<script type="text/javascript">
+		var parmas = location.search.slice(1); //id=1
+        var id = parmas.split('=')[1] * 1
+        console.log(id);
+
+		
+        var res = datas.filter(function (item, index) {
+            return item.id === id;
+        })[0];
+        console.log(res)
+		var img = res.img;//小图
+        var imgUrl2 = img.replace(/200x200/g,"400x400");//中图
+		var imgUrl3 = img.replace(/200x200/g,"800x800");//大图      
+
+		document.querySelector('.small_box img').src=imgUrl2;
+		document.querySelector('.big_box img').src=imgUrl3;
+		
+		var p = document.getElementsByTagName('p')[0]
+		p.innerHTML=`
+				<h4>${res.h4}</h4>
+				<span class="price">${res.price}</span>
+				<span class="sales">${res.sales}</span>
+		`;
+		
+		
+		
+		$(".mask").mouseover(function() {
+			$(".float_layer").show()
+			$(".big_box").show()
+		})
+		$(".mask").mouseout(function() {
+			$(".float_layer").hide()
+			$(".big_box").hide()
+		})
+
+		$(".mask").mousemove(function(e) {
+			var navH = document.querySelector(".nav")
+			var tsearchH = document.querySelector(".tb_search")
+			
+			//光标距离小图左边的距离
+			var l = e.pageX - $(".small_box").offset().left - ($(".float_layer").width() / 2)
+			//光标居来小图上边的距离
+			var t = e.pageY - $(".small_box").offset().left - ($(".float_layer").height() / 2)+(navH.offsetHeight+tsearchH.offsetHeight+($(".float_layer").width() / 2))
+			if(l < 0) {
+				l = 0
+			}
+			if(l > $(this).width() - $(".float_layer").width()) {
+				l = $(this).width() - $(".float_layer").width()
+			}
+			if(t < 0) {
+				t = 0
+			}
+			if(t > $(this).height() - $(".float_layer").height()) {
+				t = $(this).height() - $(".float_layer").height()
+			}
+
+			$(".float_layer").css({
+				"left": l,
+				"top": t
+			})
+			var pX = l / ($(".mask").width() - $(".float_layer").width())
+			var pY = t / ($(".mask").height() - $(".float_layer").height())
+			$(".big_box img").css({
+//				"left": -pX * ($(".big_box img").width() - $(".big_box").width()),
+//				"top": -pY * ($(".big_box img").height() - $(".big_box").height())
+				"left":-l * 2,
+				"top":-t * 2
+			})
+
+		})
+	</script>
+	
+	
+	
+	<script type="text/javascript">
+		function Tabobj(ele,content){
+			this.ele = document.querySelector(ele);
+			this.title = tabobj.title;
+			this.content = tabobj.content;
+			this.init();
+		}
+		
+		Tabobj.prototype = {
+			constructor:Tabobj,
+			init(){
+				this.ul = document.createElement('ul');
+				this.tabcen = this.ele.querySelector('.tabItem_center');
+				this.ele.insertBefore(this.ul,this.tabcen);
+				this.renderTitle();
+				this.renderContent();
+				
+				this.lis = this.ele.querySelectorAll('li');
+				this.contents = this.ele.querySelectorAll('.tab-content');
+				
+				let _this = this;
+				this.lis.forEach((items,idx) => {
+					items.onclick = function(){
+						_this.changeClassName(this,idx);
+					}
+				})
+			},
+			//渲染标题
+			renderTitle(){
+				this.title.forEach((item,index) => {
+					let li = document.createElement('li');
+					li.innerHTML = item;
+					if(index == 0){
+						li.classList.add('selected')
+					}
+					this.ul.appendChild(li)
+				})
+				
+			},
+			renderContent(){
+				this.content.forEach((item,index) => {
+					let div = document.createElement('div');
+					div.innerHTML = item;
+					div.classList.add('tab-content');
+					if(index == 0){
+						div.classList.add('current');
+					}
+					this.ele.appendChild(div)
+				})
+			},
+			changeClassName(ele,idx){
+				for(var i=0;i<this.lis.length;i++){
+					this.lis[i].classList.remove('selected');
+					this.contents[i].classList.remove('current');
+				}
+				ele.classList.add('selected')
+				this.contents[idx].classList.add('current');
+			}
+			
+		}
+	
+		let tabobj = {
+			title:['宝贝','天猫','店铺'],
+			content:[
+				'新款连衣裙 四件套 潮流T恤 时尚女鞋 短裤 半身裙 男士外套 墙纸 行车记录仪 新款男鞋 耳机 时尚女包 沙发',
+				'天猫',
+				'新款连衣裙 四件套 潮流T恤 时尚女鞋 短裤 半身裙 '
+			]
+		}
+		
+		new Tabobj('.tabItem',tabobj)
+	</script>
+</html>

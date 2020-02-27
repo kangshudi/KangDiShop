@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/common.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="font_icon/iconfont.css" />
+    <script src="js/data.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/utils.js" type="text/javascript" charset="utf-8"></script>
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            outline: 0;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        a:link {
+            text-decoration: none;
+        }
+
+        .box {
+            width: 450px;
+            height: 600px;
+            border: 1px solid red;
+            margin: 10px auto;
+            padding: 20px;x: 999;
+        }
+
+        .box img {
+            width: 100%;
+        }
+
+        .box h2 {
+            font-size: 14px;
+            color: #6b6969;
+            font-weight: normal;
+            font-weight: 700;
+           
+        }
+		
+		.goods h3{
+			float: left;
+			margin-top: 20px;
+			color: #f40;
+		}
+		
+		.goods h3 em{
+			margin-right: 10px;
+		}
+		
+		.goods p{
+			float: right;
+			margin-top: 20px;
+			font-size: 20px;
+			color: #969896;
+		}
+		
+		
+		
+		
+		  .box>.show {
+            width: 450px;
+            height: 450px;
+            border: 1px solid #333;
+            position: relative;
+        }
+
+        .box>.show>.mask {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            opacity: .4;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+
+            display: none;
+        }
+
+        .box>.list {
+            width: 100%;
+            flex: 1;
+
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            box-sizing: border-box;
+            padding: 20px;
+        }
+
+        .box>.list>p {
+            width: 54px;
+            height: 54px;
+            border: 1px solid #333;
+            margin-right: 10px;
+        }
+
+        .box>.list>p.active {
+            border-color: red;
+        }
+
+        .box>.enlarge {
+            /* 容器 与背景图的比例为 1 ：2 */
+            width: 400px;
+            height: 400px;
+            position: absolute;
+            top: 0;
+            left: 101%;
+            background: url(../images/1.big.jpg) no-repeat;
+            background-size: 800px 800px;
+            background-position: 0 0;
+            display: none;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+	<div class="nav">
+			<div class="nav_top">
+				<div class="nav_top_site">
+					<ul class="site_left_ul clear_fixe">
+						<li class="site_left_li">
+							中国大陆
+							<span class="iconfont icon-xiangxia2"></span>
+						</li>
+						<li class="site_left_li">
+							<a href="">亲，请登录</a>
+						</li>
+						<li class="site_left_li">
+							<span class="iconfont icon-xinfeng-"></span>
+							<a href="">消息</a>
+							<span class="iconfont icon-xiangxia2"></span>
+						</li>
+						<li class="site_left_li"><a href="">手机逛淘宝</a></li>
+					</ul>
+					
+					
+					<ul class="site_right_ul clear_fixe">
+						<li class="site_right_li">
+							<a href="">我的淘宝</a>
+							<span class="iconfont icon-xiangxia2"></span>
+						</li>
+						<li class="site_right_li">
+							<span class="iconfont icon-gouwuchefill"></span>
+							<a href="">购物车</a>
+							<span class="iconfont icon-xiangxia2"></span>
+						</li>
+						<li class="site_right_li shouchanj">
+							<span class="iconfont icon-biaoxingfill"></span>
+							<a href="">收藏夹</a>
+							<span class="iconfont icon-xiangxia2"></span>
+						</li>
+						<li class="site_right_li">
+							<a href="">商品分类</a>
+						</li>
+						<li class="site_right_li">
+							<a href="">千牛卖家中心</a>
+							<span class="iconfont icon-xiangxia2"></span>
+						</li>
+						<li class="site_right_li">
+							<a href="">联系客服</a>
+							<span class="iconfont icon-xiangxia2"></span>
+						</li>
+						<li class="site_right_li">
+							<a href="">网站导航</a>
+							<span class="iconfont icon-xiangxia2"></span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<!--logo、搜索栏目-->
+		<div class="tb_search">
+			<div class="tb_search_top">
+				<div class="tb_search_warp clear_fixe">
+					<!--logo图标-->
+					<div class="tb_logo">
+						<div class="logo">
+							<h1>
+								<a href="">
+									<img src="//img.alicdn.com/tfs/TB1_uT8a5ERMeJjSspiXXbZLFXa-143-59.png"/>
+								</a>
+							</h1>
+						</div>
+					</div>
+					
+					<!--搜索栏目-->
+					<div class="tb_sousuo">
+						<div class="tb_sousuo_tar">
+							<div class="tabItem" id="tab1">
+								<!--<ul>
+									<li class="selected">宝贝</li>
+									<li>天猫</li>
+									<li>店铺</li>
+								</ul>-->
+								<!--搜索栏目中间搜索框-->
+								<div class="tabItem_center clear_fixe">
+									<div class="tabItem_center_l">
+										<div class="tabItem_center_l_input">
+											<input type="text" name="search" id="search" placeholder="肾宝片" value="" />
+										</div>
+										
+										<!--搜索栏目中间搜索框    左右两边的图标 相机或者放大镜-->
+										<span class="iconfont icon-xiangji"></span>
+										<i class="iconfont icon-fangdajing danDajin"></i>
+									</div>
+									<div class="tabItem_center_r">
+										<button class="tabItem_center_r_btn">搜索</button>
+									</div>
+								</div>
+								
+								<!--<div class="tab-content current">宝贝+</div>
+								<div class="tab-content">天猫+</div>
+								<div class="tab-content">店铺+</div>-->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+    <div class="box">
+        <!--<div class="goods">-->
+            <!-- <img src="../images/g1.jpg" alt="">
+            <h2>阿联酋美女1号</h2>
+            <h3 style="font-size: 20px;">￥<input type="text" id="jiage" value="1998"></h3>
+            <p>年龄：20</p> -->
+            
+           <div class="show">
+	            <img src="" alt="">
+	            <div class="mask"></div>
+	        </div>
+	        <div class="list">
+	            <p class="active" bigImg="" img="">
+	                <img src="" alt="">
+	            </p>
+	        </div>
+	        <div class="enlarge"></div>
+        <!--</div>-->
+    </div>
+
+    <script>
+       
+        var parmas = location.search.slice(1); //id=1
+        var id = parmas.split('=')[1] * 1
+        console.log(id);
+
+
+        var res = datas.filter(function (item, index) {
+            return item.id === id;
+        })[0];
+        console.log(res)
+//      var goods = document.getElementsByClassName('goods')[0];
+
+//      goods.innerHTML = `
+//          <img src="${res.img}" alt="">
+//          <h2>${res.h4}</h2>
+//          <h3 style="font-size: 20px;">${res.price}</h3>
+//          <p>${res.sales}</p>
+//       `;
+         
+        
+         
+        var img = res.img;//小图
+        var imgUrl2 = img.replace(/200x200/g,"400x400");//中图
+		var imgUrl3 = img.replace(/200x200/g,"800x800");//大图      
+		document.querySelector('.enlarge').style.background = "url("+imgUrl3+") no-repeat";
+		document.querySelector('.show img').src = imgUrl2;
+		var smallImg = document.querySelectorAll('.list img');
+		for(var i=0;i<smallImg.length;i++){
+			smallImg[i].src = img;
+			var cenImg = smallImg[i].parentNode.getAttribute('img');
+			cenImg=imgUrl2;
+			var bigImg = smallImg[i].parentNode.getAttribute('bigimg');
+			bigImg=imgUrl3;
+			
+		}
+		
+//       goods.innerHTML = `
+//       	<div class="show">
+//	            <img src="imgUrl2" alt="">
+//	            <div class="mask"></div>
+//	        </div>
+//	        <div class="list">
+//	            <p class="active" bigImg="imgUrl3" img="imgUrl2">
+//	                <img src="img" alt="">
+//	            </p>
+//	        </div>
+//	        <div class="enlarge"></div>
+//       `;
+
+
+
+
+		   class Enlarge {
+            constructor(ele) {
+                this.ele = document.querySelector(ele);
+                this.init()
+            }
+            init() {
+                // 需要获取什么元素
+                this.show = this.ele.querySelector('.show');
+                this.mask = this.ele.querySelector('.mask');
+                this.enlarge = this.ele.querySelector('.enlarge');
+
+                // 鼠标移入show盒子，显示mask 和enlarge
+                this.show.onmouseover = () => {
+                    this.mask.style.display = this.enlarge.style.display = 'block';
+                    this.setStyle();
+                    this.move()
+                }
+                // 鼠标移出show盒子，隐藏mask 和enlarge
+                this.show.onmouseout = () => {
+                    this.mask.style.display = this.enlarge.style.display = 'none'
+                }
+
+                // 获取小图的标签，并且绑定点击事件？
+                this.p = this.ele.querySelector('.list').children;
+                let _this = this;
+                for (let i = 0; i < this.p.length; i++) {
+                    this.p[i].onclick = function () {
+                        _this.change(this);
+                    }
+                }
+
+
+            }
+            setStyle() {
+                // 设置放大镜盒子的大小
+                // 放大镜盒子的大小 = 遮罩层盒子的大小 * 放大镜盒子背景图的大小 / show盒子的大小
+
+                // 遮罩层盒子的大小
+                this.maskWidth = this.mask.offsetWidth;
+                this.maskHeight = this.mask.offsetHeight;
+
+                // 放大镜中背景的尺寸
+                this.bgx = parseInt(getStyle(this.enlarge, 'background-size').split(' ')[0])
+                this.bgy = parseInt(getStyle(this.enlarge, 'background-size').split(' ')[1])
+				console.log(this.bgx,this.bgy)
+                // show盒子的大小
+                this.showWidth = this.show.clientWidth;
+                this.showHeight = this.show.clientHeight;
+
+                let enlargeX = this.maskWidth * this.bgx / this.showWidth;
+                let enlargeY = this.maskHeight * this.bgy / this.showHeight;
+
+                this.enlarge.style.width = enlargeX + 'px';
+                this.enlarge.style.height = enlargeY + 'px'
+
+            }
+            move() {
+                // 改变遮罩层的位置 和 放大镜背景图的位置
+                this.show.onmousemove = (e) => {
+
+                    let left = e.clientX - this.ele.offsetLeft - this.maskWidth / 2;
+                    let top = e.clientY - this.ele.offsetTop - this.maskHeight / 2;
+
+                    // 边界值的判断
+                    if (left <= 0) {
+                        left = 0;
+                    }
+                    if (top <= 0) {
+                        top = 0;
+                    }
+                    if (left >= this.showWidth - this.maskWidth) {
+                        left = this.showWidth - this.maskWidth;
+                    }
+                    if (top >= this.showHeight - this.maskHeight) {
+                        top = this.showHeight - this.maskHeight
+                    }
+                    // 移动遮罩层
+                    this.mask.style.left = left + 'px';
+                    this.mask.style.top = top + 'px';
+
+                    // 移动背景图
+                    //  背景图移动的距离 = 背景图 * mask移动距离 / show盒子的大小
+                    let bgPX = this.bgx * left / this.showWidth;
+                    let bgPY = this.bgy * top / this.showHeight;
+                    this.enlarge.style.backgroundPosition = `-${bgPX}px -${bgPY}px`;
+                }
+            }
+            change(ele) {
+                //  排他思想
+                for (let j = 0; j < this.p.length; j++) {
+                    this.p[j].classList.remove('active');
+                }
+                ele.classList.add('active');
+                let bigImg = ele.getAttribute('bigImg') // 放大镜的背景图
+                let img = ele.getAttribute('img');      // show 盒子显示的图片
+
+                this.img = this.show.querySelector('img');
+
+                this.img.setAttribute('src', img)
+                this.enlarge.style.backgroundImage = `url(${bigImg})`
+            }
+        }
+        new Enlarge('.box')
+
+    </script>
+</body>
+<script type="text/javascript">
+	
+	function Tabobj(ele,content){
+			this.ele = document.querySelector(ele);
+			this.title = tabobj.title;
+			this.content = tabobj.content;
+			this.init();
+		}
+		
+		Tabobj.prototype = {
+			constructor:Tabobj,
+			init(){
+				this.ul = document.createElement('ul');
+				this.tabcen = this.ele.querySelector('.tabItem_center');
+				this.ele.insertBefore(this.ul,this.tabcen);
+				this.renderTitle();
+				this.renderContent();
+				
+				this.lis = this.ele.querySelectorAll('li');
+				this.contents = this.ele.querySelectorAll('.tab-content');
+				
+				let _this = this;
+				this.lis.forEach((items,idx) => {
+					items.onclick = function(){
+						_this.changeClassName(this,idx);
+					}
+				})
+			},
+			//渲染标题
+			renderTitle(){
+				this.title.forEach((item,index) => {
+					let li = document.createElement('li');
+					li.innerHTML = item;
+					if(index == 0){
+						li.classList.add('selected')
+					}
+					this.ul.appendChild(li)
+				})
+				
+			},
+			renderContent(){
+				this.content.forEach((item,index) => {
+					let div = document.createElement('div');
+					div.innerHTML = item;
+					div.classList.add('tab-content');
+					if(index == 0){
+						div.classList.add('current');
+					}
+					this.ele.appendChild(div)
+				})
+			},
+			changeClassName(ele,idx){
+				for(var i=0;i<this.lis.length;i++){
+					this.lis[i].classList.remove('selected');
+					this.contents[i].classList.remove('current');
+				}
+				ele.classList.add('selected')
+				this.contents[idx].classList.add('current');
+			}
+			
+		}
+	
+		let tabobj = {
+			title:['宝贝','天猫','店铺'],
+			content:[
+				'新款连衣裙 四件套 潮流T恤 时尚女鞋 短裤 半身裙 男士外套 墙纸 行车记录仪 新款男鞋 耳机 时尚女包 沙发',
+				'天猫',
+				'新款连衣裙 四件套 潮流T恤 时尚女鞋 短裤 半身裙 '
+			]
+		}
+		
+		new Tabobj('.tabItem',tabobj)
+		 
+		 
+		 
+		 
+		
+	</script>
+</html>
